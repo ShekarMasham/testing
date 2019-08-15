@@ -1,3 +1,5 @@
 This is an example of Git for Computer Hope.
 --"added few lines by Masham Rajashekar"
 --"added few lines second time by me....
+-------------------------------------------------
+--"added a new line by rajashekar Masham" on 15-08-2019
