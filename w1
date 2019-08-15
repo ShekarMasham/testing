@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html>
+<body>
+<pre>AS BORROWER(including customers own/joint/sole proprietorship/partnership accounts).
+<table border="1" >
+    <tr>
+      <th><pre>No</pre></th>
+      <th><pre>Date/
+RR Date</pre></th>
+      <th ><pre>STS</pre></th>
+      <th><pre>Capacity</pre></th>
+      <th><pre>Lender
+Type</pre></th>
+      <th><pre>Facility</pre></th>
+      <th><pre>Total 
+Out
+Standing 
+Balance(RM)</pre></th>
+      <th><pre>Date
+Balance
+Updated</pre></th>
+      <th><pre>Limit/
+Installment 
+Amount(RM)</pre></th>
+      <th><pre>Prin.
+Repmt
+term</pre></th>
+      <th><pre>Col
+Type</pre></th>
+<th><pre>LGL
+
+STS</pre></th>
+<th><pre>Date
+Status
+Update</pre></th>
+<th><pre> Conduct of account 
+for last 12 Months
+
+<xsl:value-of select="Response/Data/FromYear"/>.              <xsl:value-of select="Response/Data/ToYear"/></pre>
+<xsl:value-of select="Response/Data/MonthOrder/M1"/>-<xsl:value-of select="Response/Data/MonthOrder/M2"/>-<xsl:value-of select="Response/Data/MonthOrder/M3"/>-<xsl:value-of select="Response/Data/MonthOrder/M4"/>-<xsl:value-of select="Response/Data/MonthOrder/M5"/>-<xsl:value-of select="Response/Data/MonthOrder/M6"/>-<xsl:value-of select="Response/Data/MonthOrder/M7"/>-<xsl:value-of select="Response/Data/MonthOrder/M8"/>-<xsl:value-of select="Response/Data/MonthOrder/M9"/>-<xsl:value-of select="Response/Data/MonthOrder/M10"/>-<xsl:value-of select="Response/Data/MonthOrder/M11"/>-<xsl:value-of select="Response/Data/MonthOrder/M12"/>
+</th>
+    </tr>
+<tr >
+<td colspan="13" >Outstanding Credit :</td>
+</tr>
+<xsl:for-each select="Response/Data/Loans/Loan/Row">
+<tr>
+<td><xsl:value-of select="RowNo"/></td>
+<td><xsl:value-of select="Date"/></td>
+<td><xsl:value-of select="STS "/></td>
+<td><xsl:value-of select="Capacity"/></td>
+<td><xsl:value-of select="LenderType"/></td>
+<td><xsl:value-of select="Facility "/></td>
+<td><xsl:value-of select="Balance"/></td>
+<td><xsl:value-of select="BalanceDate"/></td>
+<td><xsl:value-of select="Limit"/></td>
+<td><xsl:value-of select="RepayTerm"/></td>
+<td><xsl:value-of select="ColType"/></td>
+<td><xsl:value-of select="Legal "/></td>
+<td><xsl:value-of select="LegalDate "/></td>
+<td><table border="0">
+<tr>
+<td><xsl:value-of select="M1"/></td>
+<td><xsl:value-of select="M2"/></td>
+<td><xsl:value-of select="M3"/></td>
+<td><xsl:value-of select="M4"/></td>
+<td><xsl:value-of select="M5"/></td>
+<td><xsl:value-of select="M6"/></td>
+<td><xsl:value-of select="M7"/></td>
+<td><xsl:value-of select="M8"/></td>
+<td><xsl:value-of select="M9"/></td>
+<td><xsl:value-of select="M10"/></td>
+<td><xsl:value-of select="M11"/></td>
+<td><xsl:value-of select="M12"/></td>
+</tr>
+</table></td>
+</tr>
+</xsl:for-each>
+<tr >
+<td colspan="13" >Special Attention Account :</td>
+</tr>
+<xsl:for-each select="Response/Data/SpecAttnLoans/SpecAttn/Row">
+<tr>
+<td><xsl:value-of select="RowNo"/></td>
+<td><xsl:value-of select="Date"/></td>
+<td><xsl:value-of select="STS "/></td>
+<td><xsl:value-of select="Capacity"/></td>
+<td><xsl:value-of select="LenderType"/></td>
+<td><xsl:value-of select="Facility "/></td>
+<td><xsl:value-of select="Balance"/></td>
+<td><xsl:value-of select="BalanceDate"/></td>
+<td><xsl:value-of select="Limit"/></td>
+<td><xsl:value-of select="RepayTerm"/></td>
+<td><xsl:value-of select="ColType"/></td>
+<td><xsl:value-of select="Legal "/></td>
+<td><xsl:value-of select="LegalDate "/></td>
+<td><table border="0">
+<tr>
+<td><xsl:value-of select="M1"/></td>
+<td><xsl:value-of select="M2"/></td>
+<td><xsl:value-of select="M3"/></td>
+<td><xsl:value-of select="M4"/></td>
+<td><xsl:value-of select="M5"/></td>
+<td><xsl:value-of select="M6"/></td>
+<td><xsl:value-of select="M7"/></td>
+<td><xsl:value-of select="M8"/></td>
+<td><xsl:value-of select="M9"/></td>
+<td><xsl:value-of select="M10"/></td>
+<td><xsl:value-of select="M11"/></td>
+<td><xsl:value-of select="M12"/></td>
+</tr>
+</table></td>
+</tr>
+</xsl:for-each>
+<tr >
+<td colspan="13" >Application for Credit :</td>
+<xsl:for-each select="Response/Data/Applications/Application/Row">
+<tr>
+<td><xsl:value-of select="RowNo"/></td>
+<td><xsl:value-of select="Date"/></td>
+<td><xsl:value-of select="STS "/></td>
+<td><xsl:value-of select="Capacity"/></td>
+<td><xsl:value-of select="LenderType"/></td>
+<td><xsl:value-of select="Facility "/></td>
+<td><xsl:value-of select="Balance"/></td>
+<td><xsl:value-of select="BalanceDate"/></td>
+<td><xsl:value-of select="Limit"/></td>
+<td><xsl:value-of select="RepayTerm"/></td>
+<td><xsl:value-of select="ColType"/></td>
+<td><xsl:value-of select="Legal "/></td>
+<td><xsl:value-of select="LegalDate "/></td>
+<td><table border="0">
+<tr>
+<td><xsl:value-of select="M1"/></td>
+<td><xsl:value-of select="M2"/></td>
+<td><xsl:value-of select="M3"/></td>
+<td><xsl:value-of select="M4"/></td>
+<td><xsl:value-of select="M5"/></td>
+<td><xsl:value-of select="M6"/></td>
+<td><xsl:value-of select="M7"/></td>
+<td><xsl:value-of select="M8"/></td>
+<td><xsl:value-of select="M9"/></td>
+<td><xsl:value-of select="M10"/></td>
+<td><xsl:value-of select="M11"/></td>
+<td><xsl:value-of select="M12"/></td>
+</tr>
+</table></td>
+</tr>
+</xsl:for-each>
+</tr>
+</table>
+</pre>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html>
+<body>
+<pre>AS BORROWER(including customers own/joint/sole proprietorship/partnership accounts).<pre>
+<table border="1" >
+    <tr>
+      <th><pre>No</pre></th>
+      <th><pre>Date/
+RR Date</pre></th>
+      <th ><pre>STS</pre></th>
+      <th><pre>Capacity</pre></th>
+      <th><pre>Lender
+Type</pre></th>
+      <th><pre>Facility</pre></th>
+      <th><pre>Total 
+Out
+Standing 
+Balance(RM)</pre></th>
+      <th><pre>Date
+Balance
+Updated</pre></th>
+      <th><pre>Limit/
+Installment 
+Amount(RM)</pre></th>
+      <th><pre>Prin.
+Repmt
+term</pre></th>
+      <th><pre>Col
+Type</pre></th>
+<th><pre>LGL
+
+STS</pre></th>
+<th><pre>Date
+Status
+Update</pre></th>
+<th><pre> Conduct of account 
+for last 12 Months
+
+<xsl:value-of select="Response/Data/FromYear"/>.              <xsl:value-of select="Response/Data/ToYear"/></pre>
+<xsl:value-of select="Response/Data/MonthOrder/M1"/>-<xsl:value-of select="Response/Data/MonthOrder/M2"/>-<xsl:value-of select="Response/Data/MonthOrder/M3"/>-<xsl:value-of select="Response/Data/MonthOrder/M4"/>-<xsl:value-of select="Response/Data/MonthOrder/M5"/>-<xsl:value-of select="Response/Data/MonthOrder/M6"/>-<xsl:value-of select="Response/Data/MonthOrder/M7"/>-<xsl:value-of select="Response/Data/MonthOrder/M8"/>-<xsl:value-of select="Response/Data/MonthOrder/M9"/>-<xsl:value-of select="Response/Data/MonthOrder/M10"/>-<xsl:value-of select="Response/Data/MonthOrder/M11"/>-<xsl:value-of select="Response/Data/MonthOrder/M12"/>
+</th>
+    </tr>
+<tr >
+<td colspan="14" >Outstanding Credit</td>
+</tr>
+<xsl:for-each select="Response/Data/Loans/Loan/Row">
+<tr>
+<td><xsl:value-of select="RowNo"/></td>
+<td><xsl:value-of select="Date"/></td>
+<td><xsl:value-of select="STS "/></td>
+<td><xsl:value-of select="Capacity"/></td>
+<td><xsl:value-of select="LenderType"/></td>
+<td><xsl:value-of select="Facility "/></td>
+<td><xsl:value-of select="Balance"/></td>
+<td><xsl:value-of select="BalanceDate"/></td>
+<td><xsl:value-of select="Limit"/></td>
+<td><xsl:value-of select="RepayTerm"/>
+<td><xsl:value-of select="ColType"/>
+<td><xsl:value-of select="Legal "/></td>
+<td><xsl:value-of select="LegalDate "/></td>
+</tr>
+</xsl:for-each>
+<xsl:for-each select="Response/Data/Loans/Loan/Row">
+<tr>
+<td><xsl:value-of select="M1"/></td>
+<td><xsl:value-of select="M2"/></td>
+<td><xsl:value-of select="M3"/></td>
+<td><xsl:value-of select="M4"/></td>
+<td><xsl:value-of select="M5"/></td>
+<td><xsl:value-of select="M6"/></td>
+<td><xsl:value-of select="M7"/></td>
+<td><xsl:value-of select="M8"/></td>
+<td><xsl:value-of select="M9"/></td>
+<td><xsl:value-of select="M10"/></td>
+<td><xsl:value-of select="M11"/></td>
+<td><xsl:value-of select="M12"/></td>
+</tr>
+</xsl:for-each>
+</table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
